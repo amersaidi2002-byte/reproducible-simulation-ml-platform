@@ -2,6 +2,8 @@
 
 **Data, training, evaluation and deployment — one auditable, standalone project.**
 
+[![CI](https://github.com/amersaidi2002-byte/reproducible-simulation-ml-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/amersaidi2002-byte/reproducible-simulation-ml-platform/actions/workflows/ci.yml)
+
 A local-first Python platform for running mechanical-signal simulations, assembling immutable datasets, training a PyTorch surrogate and serving the same model through ONNX Runtime, a Dockerized HTTP API and a compiled C++ client.
 
 The reference application predicts RMS displacement, velocity and acceleration of a forced damped oscillator from five physical parameters. The simulator includes its initial transient.
@@ -146,7 +148,7 @@ Reference sampling: 256 Hz for 4 seconds. Outputs are `displacement_rms_mm`, `ve
 
 ## Verification and limits
 
-The workflow checks simulator contracts, immutable data versions, family isolation, cache reuse, failed/expired jobs, concurrent-owner fencing, artifact/config tampering, held-out metrics, ONNX/C++ numerical parity, model regression and HTTP validation. The included GitHub Actions workflow is configured to build the Docker image and exercise it through actual HTTP. The image build awaits its first CI run; Docker is unavailable in the local build environment. The API itself has passed real HTTP checks locally.
+The workflow checks simulator contracts, immutable data versions, family isolation, cache reuse, failed/expired jobs, concurrent-owner fencing, artifact/config tampering, held-out metrics, ONNX/C++ numerical parity, model regression and HTTP validation. GitHub Actions passes all **26 tests**, compiles and executes the C++ client, builds the Docker image, and exercises a read-only non-root container through actual HTTP. It also verifies that PyTorch is absent from the runtime image. The successful validation run and exact tested commit are recorded in [deployment validation](reports/deployment-validation.json).
 
 This is a **single-host reference platform**, not a distributed scheduler or a production service. SQLite's default 60-second lease has no heartbeat: it suits the millisecond simulator here, and must be extended or redesigned for long-running jobs. Retries do not guarantee exactly-once computation; owner fencing prevents stale result publication. Local file hashes detect accidental mismatch, not malicious replacement of both payload and manifest. No GPU, cloud infrastructure, authentication, autoscaling or physical measurement validation is claimed.
 

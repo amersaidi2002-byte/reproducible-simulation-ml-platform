@@ -8,8 +8,22 @@
     "isolated_runtime_without_torch_passed": true
   },
   "docker": {
-    "status": "pending_first_ci_run",
+    "status": "validated_in_github_actions",
     "local_daemon_available": false,
-    "workflow": ".github/workflows/ci.yml"
+    "workflow": ".github/workflows/ci.yml",
+    "build_passed": true,
+    "live_http_passed": true,
+    "read_only_non_root_container": true,
+    "runtime_without_torch_passed": true
+  },
+  "ci": {
+    "run_id": 42320862640,
+    "commit": "dcea14a59721db7c15f83568fe6bd98012f19756",
+    "url": "https://github.com/amersaidi2002-byte/reproducible-simulation-ml-platform/actions/runs/42320862640",
+    "conclusion": "success",
+    "jobs": [
+      "python-cpp-regression",
+      "docker-api"
+    ]
   }
 }

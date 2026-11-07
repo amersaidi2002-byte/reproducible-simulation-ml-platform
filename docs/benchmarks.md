@@ -38,7 +38,7 @@ The reference environment and library versions are recorded with the timing resu
 2. Fetch matching ORT headers, compile C++, and run `scripts/reproduce.py`.
 3. Run the test suite with `SIMML_CPP_BINARY` set.
 4. `scripts/check_reference.py` checks the frozen held-out values, data and model identities, and a maximum 10% mean-normalized MAE per output.
-5. The CI workflow is configured to build the Docker image, start a read-only non-root container, check real HTTP behavior and verify PyTorch is absent. This image build awaits its first CI run; the local environment has no Docker daemon. A separate isolated Python serving environment is tested through actual HTTP.
+5. CI successfully builds the Docker image, starts a read-only non-root container, checks real HTTP behavior and verifies PyTorch is absent. All 26 tests and the C++ client pass. See `reports/deployment-validation.json` for the exact validated commit and workflow run. A separate isolated Python serving environment is also tested through actual HTTP.
 
 The CI latency gate deliberately checks no wall-clock threshold: host contention would make that flaky. Correctness and artifact/data consistency are the automated regression gates.
 
