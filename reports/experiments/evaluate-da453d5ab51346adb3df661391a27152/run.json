@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "metrics": {
+      "bytes": 722,
+      "file_name": "metrics.json",
+      "sha256": "c07729abd85d9733a0cfee99cf1b59cae13c0eb4ac9c725cbc2f37aaa3c2fc44"
+    }
+  },
+  "config": {
+    "metrics": [
+      "mae",
+      "relative_mae",
+      "r2"
+    ],
+    "schema": "evaluation/1",
+    "split": "test"
+  },
+  "config_sha256": "e07b16300fcac14b12b059acb28023ae8c13e8856668ac27e568250f980c8152",
+  "environment": {
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "python": "3.12.14"
+  },
+  "finished_unix": 1794011765.1381834,
+  "inputs": {
+    "checkpoint_sha256": "f935a5c9a69c679aa694b811f71aedf5a58f21527a3d2906173ba531650089ef",
+    "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8"
+  },
+  "kind": "evaluate",
+  "run_id": "evaluate-da453d5ab51346adb3df661391a27152",
+  "started_unix": 1794011765.1334777,
+  "status": "succeeded"
+}

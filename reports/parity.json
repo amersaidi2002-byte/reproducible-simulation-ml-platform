@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "backend": "onnx_python",
+      "batch": 1,
+      "max_absolute_error": 0.0003662109375,
+      "max_relative_error": 5.135362698638346e-06
+    },
+    {
+      "backend": "onnx_cpp",
+      "batch": 1,
+      "max_absolute_error": 0.0003662109375,
+      "max_relative_error": 5.135362698638346e-06
+    },
+    {
+      "backend": "onnx_python",
+      "batch": 7,
+      "max_absolute_error": 0.00018310546875,
+      "max_relative_error": 1.974144652194809e-05
+    },
+    {
+      "backend": "onnx_cpp",
+      "batch": 7,
+      "max_absolute_error": 0.00018310546875,
+      "max_relative_error": 1.974144652194809e-05
+    },
+    {
+      "backend": "onnx_python",
+      "batch": 64,
+      "max_absolute_error": 0.0029296875,
+      "max_relative_error": 1.974144652194809e-05
+    },
+    {
+      "backend": "onnx_cpp",
+      "batch": 64,
+      "max_absolute_error": 0.0029296875,
+      "max_relative_error": 1.974144652194809e-05
+    },
+    {
+      "backend": "onnx_python",
+      "batch": 256,
+      "max_absolute_error": 0.00634765625,
+      "max_relative_error": 0.00019862581393681467
+    },
+    {
+      "backend": "onnx_cpp",
+      "batch": 256,
+      "max_absolute_error": 0.00634765625,
+      "max_relative_error": 0.00019862581393681467
+    }
+  ],
+  "checkpoint_sha256": "f935a5c9a69c679aa694b811f71aedf5a58f21527a3d2906173ba531650089ef",
+  "onnx_sha256": "a2415efb495a509f01bc41e6dea2f44006d4788ab9ef7a3450ec85573371a7f3",
+  "tolerance": {
+    "atol": 0.0002,
+    "rtol": 2e-05
+  }
+}

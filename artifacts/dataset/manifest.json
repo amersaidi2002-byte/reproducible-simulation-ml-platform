@@ -1,0 +1,39 @@
+{
+  "arrays_sha256": "c91189e81fcc84d77dea2907204f9c71e8a9524c51880eadce8428b5d9234f48",
+  "config": {
+    "families": 80,
+    "generator": "anchor-normal-0.12/v1",
+    "members": 40,
+    "seed": 2026,
+    "simulation": {
+      "duration_s": 4.0,
+      "sample_rate_hz": 256
+    },
+    "simulator": {
+      "contract": "forced-oscillator/1",
+      "numpy": "2.3.5",
+      "source_sha256": "4ce9e62aadfc9f271b7cf4663b798b65e0ab282381446566728d07e695e83959"
+    }
+  },
+  "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8",
+  "file_sha256": "b553ae59631158410f87fa1a6d0d9964bebb7e307aa8ad9f65f92bf1a73eae89",
+  "outputs": [
+    "displacement_rms_mm",
+    "velocity_rms_mm_s",
+    "acceleration_rms_mm_s2"
+  ],
+  "parameters": [
+    "natural_frequency_hz",
+    "damping_ratio",
+    "drive_frequency_hz",
+    "force_n",
+    "mass_kg"
+  ],
+  "rows": 3200,
+  "schema": "simml-dataset/1",
+  "splits": {
+    "test": 480,
+    "train": 2240,
+    "validation": 480
+  }
+}

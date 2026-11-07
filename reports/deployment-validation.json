@@ -1,0 +1,15 @@
+{
+  "local_validation": {
+    "pytest_passed": 24,
+    "cpp_compiled_and_executed": true,
+    "numeric_parity_passed": true,
+    "frozen_metrics_passed": true,
+    "live_http_passed": true,
+    "isolated_runtime_without_torch_passed": true
+  },
+  "docker": {
+    "status": "pending_first_ci_run",
+    "local_daemon_available": false,
+    "workflow": ".github/workflows/ci.yml"
+  }
+}

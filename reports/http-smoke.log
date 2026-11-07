@@ -1,0 +1,23 @@
+{
+  "bundle_id": "d8c80376f73fe14c0a5c04ec957d4654b351a2fab4d612a3066d1e5886755fa5",
+  "predictions": [
+    {
+      "displacement_rms_mm": 0.8984106779098511,
+      "velocity_rms_mm_s": 45.44157409667969,
+      "acceleration_rms_mm_s2": 2246.009033203125
+    }
+  ]
+}
+INFO:     Started server process [42]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:40261 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52250 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52264 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52276 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52288 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [42]
+

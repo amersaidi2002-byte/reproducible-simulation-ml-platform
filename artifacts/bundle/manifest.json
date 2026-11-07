@@ -1,0 +1,70 @@
+{
+  "bundle_id": "d8c80376f73fe14c0a5c04ec957d4654b351a2fab4d612a3066d1e5886755fa5",
+  "checkpoint_sha256": "f935a5c9a69c679aa694b811f71aedf5a58f21527a3d2906173ba531650089ef",
+  "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8",
+  "evaluation_config": {
+    "metrics": [
+      "mae",
+      "relative_mae",
+      "r2"
+    ],
+    "schema": "evaluation/1",
+    "split": "test"
+  },
+  "evaluation_config_sha256": "e07b16300fcac14b12b059acb28023ae8c13e8856668ac27e568250f980c8152",
+  "input": {
+    "bounds": [
+      [
+        2.0,
+        15.0
+      ],
+      [
+        0.03,
+        0.3
+      ],
+      [
+        1.0,
+        20.0
+      ],
+      [
+        0.2,
+        3.0
+      ],
+      [
+        0.5,
+        3.0
+      ]
+    ],
+    "dtype": "float32",
+    "max_batch": 256,
+    "name": "parameters",
+    "parameters": [
+      "natural_frequency_hz",
+      "damping_ratio",
+      "drive_frequency_hz",
+      "force_n",
+      "mass_kg"
+    ],
+    "shape": [
+      "batch",
+      5
+    ]
+  },
+  "onnx_sha256": "a2415efb495a509f01bc41e6dea2f44006d4788ab9ef7a3450ec85573371a7f3",
+  "output": {
+    "dtype": "float32",
+    "metrics": [
+      "displacement_rms_mm",
+      "velocity_rms_mm_s",
+      "acceleration_rms_mm_s2"
+    ],
+    "name": "metrics",
+    "shape": [
+      "batch",
+      3
+    ]
+  },
+  "schema": "simml-bundle/1",
+  "simulator_contract": "forced-oscillator/1",
+  "training_config_sha256": "ae48df45366a80c477f0a40c04a87bcc9e34411445ccc1dc0fe0b19dcee4979e"
+}

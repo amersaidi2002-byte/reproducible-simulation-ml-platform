@@ -1,0 +1,6 @@
+{
+  "dataset": {"families": 80, "members": 40, "seed": 2026, "workers": 4},
+  "simulation": {"sample_rate_hz": 256, "duration_s": 4.0},
+  "training": {"epochs": 250, "seed": 2026, "width": 64, "batch_size": 128, "learning_rate": 0.003},
+  "evaluation": {"split": "test", "metrics": ["mae", "relative_mae", "r2"], "schema": "evaluation/1"}
+}

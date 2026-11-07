@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "checkpoint": {
+      "bytes": 24517,
+      "file_name": "checkpoint.pt",
+      "sha256": "f935a5c9a69c679aa694b811f71aedf5a58f21527a3d2906173ba531650089ef"
+    },
+    "checkpoint_manifest": {
+      "bytes": 2313,
+      "file_name": "checkpoint.json",
+      "sha256": "94205ddb3737be576829504364a0f45760f8ed52e9d3310fac439e6ac100f3bc"
+    }
+  },
+  "config": {
+    "batch_size": 128,
+    "epochs": 250,
+    "learning_rate": 0.003,
+    "seed": 2026,
+    "width": 64
+  },
+  "config_sha256": "ae48df45366a80c477f0a40c04a87bcc9e34411445ccc1dc0fe0b19dcee4979e",
+  "environment": {
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "python": "3.12.14"
+  },
+  "finished_unix": 1794011765.1255913,
+  "inputs": {
+    "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8"
+  },
+  "kind": "train",
+  "run_id": "train-7fd02ea7da244d2d8c6bf2cecb49834d",
+  "started_unix": 1794011761.5885286,
+  "status": "succeeded"
+}

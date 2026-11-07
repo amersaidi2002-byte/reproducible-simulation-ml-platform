@@ -1,0 +1,39 @@
+name: platform-checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  python-cpp-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -r requirements/api.lock
+      - run: python -m pip install -e '.[train,serve,dev]'
+      - run: python scripts/fetch_ort.py
+      - run: cmake -S cpp -B build/cpp -DONNXRUNTIME_ROOT="$PWD/build/ort" -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build/cpp -j 2
+      - run: ruff check src tests scripts
+      - run: python -m pytest -q
+        env:
+          SIMML_CPP_BINARY: ${{ github.workspace }}/build/cpp/simml_predict
+      - run: python scripts/check_reference.py
+  docker-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: docker build -t simml-api:ci .
+      - run: docker run -d --name simml-api --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m -p 127.0.0.1:8000:8000 simml-api:ci
+      - run: python scripts/container_smoke.py
+      - run: docker exec simml-api python -c "import importlib.util; assert importlib.util.find_spec('torch') is None"
+      - if: always()
+        run: docker logs simml-api || true
+      - if: always()
+        run: docker rm -f simml-api || true

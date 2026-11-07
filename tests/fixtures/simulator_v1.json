@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "configuration": {
+        "duration_s": 4.0,
+        "sample_rate_hz": 256
+      },
+      "expected": {
+        "acceleration_rms_mm_s2": 2222.136753634761,
+        "displacement_rms_mm": 0.8858365451760241,
+        "velocity_rms_mm_s": 44.440727989560365
+      },
+      "parameters": [
+        7,
+        0.12,
+        8,
+        1,
+        1
+      ]
+    },
+    {
+      "configuration": {
+        "duration_s": 4.0,
+        "sample_rate_hz": 256
+      },
+      "expected": {
+        "acceleration_rms_mm_s2": 36918.57838967344,
+        "displacement_rms_mm": 37.419618550487456,
+        "velocity_rms_mm_s": 1176.0081782982973
+      },
+      "parameters": [
+        5,
+        0.03,
+        5,
+        2,
+        0.5
+      ]
+    },
+    {
+      "configuration": {
+        "duration_s": 4.0,
+        "sample_rate_hz": 256
+      },
+      "expected": {
+        "acceleration_rms_mm_s2": 74.8830828076467,
+        "displacement_rms_mm": 0.0047586110028781025,
+        "velocity_rms_mm_s": 0.5970351441860142
+      },
+      "parameters": [
+        15,
+        0.3,
+        20,
+        0.2,
+        3
+      ]
+    }
+  ],
+  "contract": "forced-oscillator/1"
+}

@@ -1,0 +1,12 @@
+.git
+.venv
+work
+build
+tests
+reports
+cpp
+scripts
+__pycache__
+*.egg-info
+artifacts/checkpoint.*
+artifacts/dataset

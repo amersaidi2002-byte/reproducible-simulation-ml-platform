@@ -1,0 +1,36 @@
+{
+  "bundle_id": "d8c80376f73fe14c0a5c04ec957d4654b351a2fab4d612a3066d1e5886755fa5",
+  "checkpoint_sha256": "f935a5c9a69c679aa694b811f71aedf5a58f21527a3d2906173ba531650089ef",
+  "configuration": {
+    "dataset": {
+      "families": 80,
+      "members": 40,
+      "seed": 2026,
+      "workers": 4
+    },
+    "evaluation": {
+      "metrics": [
+        "mae",
+        "relative_mae",
+        "r2"
+      ],
+      "schema": "evaluation/1",
+      "split": "test"
+    },
+    "simulation": {
+      "duration_s": 4.0,
+      "sample_rate_hz": 256
+    },
+    "training": {
+      "batch_size": 128,
+      "epochs": 250,
+      "learning_rate": 0.003,
+      "seed": 2026,
+      "width": 64
+    }
+  },
+  "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8",
+  "evaluation_run": "evaluate-da453d5ab51346adb3df661391a27152",
+  "onnx_sha256": "a2415efb495a509f01bc41e6dea2f44006d4788ab9ef7a3450ec85573371a7f3",
+  "training_run": "train-7fd02ea7da244d2d8c6bf2cecb49834d"
+}

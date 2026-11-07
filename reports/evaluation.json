@@ -1,0 +1,32 @@
+{
+  "checkpoint_sha256": "f935a5c9a69c679aa694b811f71aedf5a58f21527a3d2906173ba531650089ef",
+  "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8",
+  "evaluation_config": {
+    "metrics": [
+      "mae",
+      "relative_mae",
+      "r2"
+    ],
+    "schema": "evaluation/1",
+    "split": "test"
+  },
+  "metrics": {
+    "mae": [
+      0.012800648991739716,
+      0.5004198618885987,
+      25.20065120990921
+    ],
+    "r2": [
+      0.9758578614587385,
+      0.9713762593981706,
+      0.986749147309078
+    ],
+    "relative_mae": [
+      0.05849189900857256,
+      0.03761465798990968,
+      0.026207428166063664
+    ]
+  },
+  "rows": 480,
+  "run_id": "evaluate-da453d5ab51346adb3df661391a27152"
+}

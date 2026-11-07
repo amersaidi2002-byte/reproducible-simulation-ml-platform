@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reproducible-simulation-ml-platform"
+version = "0.1.0"
+description = "Content-addressed simulation jobs, versioned datasets, tracked ML and portable inference"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Amer Saidi"}]
+dependencies = ["numpy>=1.26,<3"]
+
+[project.optional-dependencies]
+train = ["torch>=2.6,<3", "onnx>=1.17,<2", "onnxscript>=0.3,<1"]
+serve = ["onnxruntime==1.24.4", "fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1", "ruff>=0.9,<1"]
+
+[project.scripts]
+simml = "simml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["cpp: requires SIMML_CPP_BINARY", "integration: exercises the complete local pipeline"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

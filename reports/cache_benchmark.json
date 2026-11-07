@@ -1,0 +1,48 @@
+{
+  "configuration": {
+    "dataset": {
+      "families": 80,
+      "members": 40,
+      "seed": 2026,
+      "workers": 4
+    },
+    "evaluation": {
+      "metrics": [
+        "mae",
+        "relative_mae",
+        "r2"
+      ],
+      "schema": "evaluation/1",
+      "split": "test"
+    },
+    "simulation": {
+      "duration_s": 4.0,
+      "sample_rate_hz": 256
+    },
+    "training": {
+      "batch_size": 128,
+      "epochs": 250,
+      "learning_rate": 0.003,
+      "seed": 2026,
+      "width": 64
+    }
+  },
+  "passes": [
+    {
+      "cache_hits": 0,
+      "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8",
+      "elapsed_seconds": 6.805443212000682,
+      "pass": "cold_or_resumed",
+      "rows": 3200,
+      "simulator_executions": 3200
+    },
+    {
+      "cache_hits": 3200,
+      "dataset_id": "71ed92fb92a49f7065bce39a74925ccd750b8102e9068fb017df12faaf5b16d8",
+      "elapsed_seconds": 0.6646278879998135,
+      "pass": "warm",
+      "rows": 3200,
+      "simulator_executions": 0
+    }
+  ]
+}

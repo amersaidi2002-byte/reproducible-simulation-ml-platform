@@ -1,0 +1,32 @@
+{
+  "batch": 32,
+  "environment": {
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "python": "3.12.14"
+  },
+  "excludes": [
+    "model loading",
+    "HTTP",
+    "C++ process startup",
+    "filesystem I/O"
+  ],
+  "measurements": {
+    "onnx_batch_32": {
+      "median_ms": 0.027732,
+      "p95_ms": 0.09157459999999985
+    },
+    "pytorch_batch_32": {
+      "median_ms": 0.034607,
+      "p95_ms": 0.10050329999999993
+    },
+    "simulator_batch_32": {
+      "median_ms": 5.986022999999999,
+      "p95_ms": 8.346313799999999
+    }
+  },
+  "repeats": 200,
+  "threads": 1,
+  "torch": "2.15.0+cpu",
+  "warmups": 20
+}
