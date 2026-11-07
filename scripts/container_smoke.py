@@ -4,7 +4,8 @@
 import argparse
 import json
 import time
-from urllib.error import HTTPError, URLError
+from http.client import HTTPException
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 PAYLOAD = {
@@ -20,21 +21,24 @@ PAYLOAD = {
 }
 
 
+def wait_for_ready(url, attempts=40, interval=0.5):
+    """Bounded retries for startup refusal, reset, timeout or incomplete HTTP."""
+    for _ in range(attempts):
+        try:
+            with urlopen(url + "/health", timeout=2) as r:
+                if json.load(r)["status"] == "ready":
+                    return
+        except (OSError, HTTPException):
+            pass
+        time.sleep(interval)
+    raise RuntimeError("API never became ready")
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--url", default="http://127.0.0.1:8000")
     args = p.parse_args()
-    ready = False
-    for _ in range(40):
-        try:
-            with urlopen(args.url + "/health", timeout=2) as r:
-                ready = json.load(r)["status"] == "ready"
-            if ready:
-                break
-        except (URLError, TimeoutError):
-            time.sleep(0.5)
-    if not ready:
-        raise RuntimeError("API never became ready")
+    wait_for_ready(args.url)
     request = Request(
         args.url + "/predict",
         data=json.dumps(PAYLOAD).encode(),

@@ -1,6 +1,6 @@
 {
   "local_validation": {
-    "pytest_passed": 24,
+    "pytest_passed": 26,
     "cpp_compiled_and_executed": true,
     "numeric_parity_passed": true,
     "frozen_metrics_passed": true,

@@ -2,6 +2,7 @@
 
 | Case | Expected behavior | Automated evidence |
 |---|---|---|
+| Container startup resets or closes an HTTP connection | Retry readiness within a bounded timeout; prediction failures still fail the check | `test_readiness_retries_connection_reset_and_incomplete_http` |
 | A job raises a transient exception | Record `failed` and the exception; the next request claims attempt 2 | `test_failed_job_retry_and_limit` |
 | Repeated failures exceed three attempts | Raise `JobFailed`; no infinite retry loop | Same test (uses a two-attempt limit for speed) |
 | Worker disappears while its job is `running` | Reclaim after its lease expires | `test_expired_lease_recovery` |
